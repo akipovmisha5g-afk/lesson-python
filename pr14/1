@@ -1,3 +1,19 @@
-n = int(input())
-symbols = [ch for _ in range(n) for ch in input()]
-print(symbols)
+import random
+matrix = [[random.randint(10, 99) for _ in range(4)] for _ in range(3)]
+
+print("Матрица:")
+for row in matrix:
+    print(row)
+
+max_val = matrix[0][0]
+row_idx, col_idx = 0, 0
+
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        if matrix[i][j] > max_val:
+            max_val = matrix[i][j]
+            row_idx, col_idx = i, j
+
+# 3. Выводим результат
+print(f"\nМаксимум: {max_val}")
+print(f"Индекс строки: {row_idx}, индекс столбца: {col_idx}")
