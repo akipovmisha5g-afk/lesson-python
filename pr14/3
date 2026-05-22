@@ -1,0 +1,11 @@
+import random
+
+matrix = [[random.randint(-5, 5) for _ in range(4)] for _ in range(3)]
+
+filtered_matrix = [[x for x in row if x > 0] for row in matrix]
+
+print("Исходный список:")
+for row in matrix: print(row)
+
+print("\nОтфильтрованный список (только > 0):")
+for row in filtered_matrix: print(row)
