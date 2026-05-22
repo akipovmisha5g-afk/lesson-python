@@ -1,0 +1,19 @@
+import random
+
+matrix = [[random.randint(1, 5) for _ in range(4)] for _ in range(3)]
+print("Матрица:")
+for row in matrix: print(row)
+
+search_value = 3
+positions = []
+
+for i in range(len(matrix)):
+    for j in range(len(matrix[i])):
+        if matrix[i][j] == search_value:
+            positions.append((i, j))
+
+print(f"\nИщем элемент: {search_value}")
+if positions:
+    print(f"Элемент найден на позициях (строка, столбец): {positions}")
+else:
+    print("Элемент не найден")
